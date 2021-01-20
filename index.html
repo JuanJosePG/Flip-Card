@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="./CSS/styles.css">
+    <title>Flip Card Login</title>
+</head>
+<body>
+    <div class="card-container">
+        <div class="card">
+            <div class="card-front">
+                <div class="front-title-div">
+                    <h2 class="front-title">Welcome</h2>
+                </div>
+                <div class="username-div">
+                    <label class="username-label" for="name"></label>
+                    <input class="username-input" type="text" id="name" name="name" placeholder="Username" maxlength="10" autocomplete="off" required>
+                </div>
+                <div class="front-button-div">
+                    <button class="front-button-login" type="submit" onclick="flipAndName()"><span>Login</span></button>
+                </div>
+            </div>
+
+            <div class="card-back">
+                <div class="back-title-div">
+                    <h2 class="back-title">Good<span id="day"></span> </h2>
+                    <h1 class="back-title-name"><span id="title-name">Juan Jose</span></h1>
+                </div>
+                <div class="back-button-div">
+                    <button class="back-button" type="submit" onclick="flipAndName()"><i class="fas fa-angle-left"></i></button>
+                </div>
+                <div class="time-div">
+                    <p>It's</p>
+                    <p class="time"><span id="hour"></span><span id="minute"></span></p>
+                </div>
+                <div class="footer-div">
+                    <small>Created by <a href="https://github.com/JuanJosePG" class="link-github" target="_blank" rel="noopener">jjpg__code</a></small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./app.js"></script>
+</body>
+</html>
