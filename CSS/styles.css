@@ -1,0 +1,219 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --gunmetal: #303841;
+    --charcoal: #3A4750;
+    --jonquil: #F6C90E;
+    --cultured: #F5F5F5;
+    --white: #FFFFFF;
+}
+
+html{
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 2px;
+}
+
+.card-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+
+.card{
+    width: 300px;
+    height: 350px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -175px;
+    margin-left: -150px;
+    border-radius: 20px;
+    background-color: var(--cultured);
+    box-shadow: 3px 5px 15px var(--charcoal);
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.card.flip{
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- FRONT --- */
+.card-front{
+    height: 100%;
+    width: 100%;
+    padding: 15px 15px;
+    border-radius: 15px;
+    color: var(--gunmetal);
+    transform: rotateX(0deg);
+}
+
+.front-title{
+    margin: 50px 15px;
+    font-size: 50px;
+    border-bottom: 2px solid var(--gunmetal);
+    text-align: center;
+}
+
+.username-input{
+    width: 80%;
+    height: 35px;
+    margin: 20px auto 10px auto;
+    padding: 0 10px;
+    text-align: center;
+    font-size: 17px;
+    letter-spacing: 2px;
+    background-color: var(--cultured);
+    color: var(--gunmetal);
+    border: none;
+    border-bottom: 0.5px solid var(--charcoal);;
+}
+
+.username-input:focus{
+    outline: none;
+    color: var(--gunmetal);
+    background-color: var(--cultured);
+    border-bottom: 2px solid var(--jonquil);;
+}
+
+.front-button-login{
+    width: 90%;
+    height: 35px;
+    margin-top: 20px;
+    border-radius: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    background-color: var(--jonquil);
+    outline: none;
+    cursor: pointer;
+    border: none;
+}
+
+.front-button-login span{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.front-button-login span::after{
+    content: "\00bb";
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.front-button-login:hover span{
+    padding-right: 25px;
+}
+
+.front-button-login:hover span::after{
+    opacity: 1;
+    right: 0;
+}
+
+/* --- BACK --- */
+.card-back{
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    padding: 15px 15px;
+    border-radius: 15px;
+    color: var(--cultured);
+    background-color: var(--charcoal);
+    transform: rotateY(180deg);
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 50% 40% 10%;
+}
+
+.back-title-div{
+    height: 200px;
+    text-align: left;
+    grid-column: 1/3;
+    grid-row: 1/2;
+    padding: 10px 15px;
+}
+
+.back-title{
+    margin: 10px auto 5px auto;
+    font-size: 30px;
+}
+
+.back-title-name{
+    color: var(--jonquil);
+    letter-spacing: 0;
+    font-size: 40px;
+}
+
+.back-button-div{
+    grid-column: 1/2;
+    grid-row: 2/3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.back-button{
+    color: var(--charcoal);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 30px;
+    background-color: var(--jonquil);
+    outline: none;
+    cursor: pointer;
+    border: none;
+}
+
+.time-div{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    margin-top: 5px;
+    padding: 0 15px;
+}
+
+.time{
+    height: 100%;
+    color: var(--jonquil);
+    font-size: 65px;
+}
+
+.footer-div{
+    grid-column: 1/3;
+    grid-row: 3/4;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.link-github{
+    text-decoration: none;
+    color: var(--white);
+    font-weight: bold;
+}
